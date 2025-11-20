@@ -1,0 +1,9 @@
+# Railway deployment config
+version: '1'
+
+services:
+  web:
+    build: .
+    env:
+      MCP_HTTP_MODE: true
+      PORT: $PORT

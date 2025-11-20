@@ -1,0 +1,14 @@
+# Render deployment config
+version: 1
+
+services:
+  - type: web
+    name: phumpat-mcp-thinking
+    env: node  
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start:http
+    envVars:
+      - key: MCP_HTTP_MODE
+        value: "true"
+      - key: NODE_ENV
+        value: production
