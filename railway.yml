@@ -1,9 +1,6 @@
-# Railway deployment config
-version: '1'
-
+# Railway deployment config  
 services:
   web:
-    build: .
-    env:
-      MCP_HTTP_MODE: true
-      PORT: $PORT
+    build:
+      buildCommand: npm ci && npm run build
+      startCommand: npm run start:http

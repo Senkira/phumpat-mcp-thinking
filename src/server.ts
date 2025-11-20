@@ -119,6 +119,8 @@ async function main() {
   const isHttpMode = process.env.MCP_HTTP_MODE === 'true' || process.argv.includes('--http');
   const port = parseInt(process.env.PORT || '3000');
   
+  console.log(`Starting server - HTTP Mode: ${isHttpMode}, Port: ${port}`);
+  
   if (isHttpMode) {
     // HTTP Mode สำหรับ hosting
     const app = express();
